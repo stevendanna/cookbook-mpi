@@ -1,0 +1,7 @@
+
+orte_default_hostfile = /etc/openmpi/openmpi-default-hostfile
+<% unless node['mpi']['tcp_if'].nil? %>
+oob_tcp_listen_mode=listen_thread
+oob_tcp_if_include=<%= node['mpi']['tcp_if'] %>
+btl_tcp_if_include=<%= node['mpi']['tcp_if'] %>
+<% end %>
